@@ -44,10 +44,10 @@ function AddCustomerOnAction(){
         custAge : CustomerAge,
         custAddress : CustomerAddress
     }
-   saveCustomerLocalDB();
+   saveCustomerLocalDB(Customer);
 }
 
-function saveCustomerLocalDB(){
+function saveCustomerLocalDB(customer){
     if(localStorage.getItem("CustomerList")){
         console.log(true);
         let arOfCustomers=JSON.parse(localStorage.getItem("CustomerList"));
@@ -57,6 +57,7 @@ function saveCustomerLocalDB(){
         console.log(false);
         const customerList=[];
         customerList.push(customer);
-        let arCustomer=JSON.stringify(customerList);
+        let arOfCustomers=JSON.stringify(customerList);
+        localStorage.setItem("customerList",JSON.stringify(arOfCustomers));
     }
 }
