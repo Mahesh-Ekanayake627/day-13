@@ -38,7 +38,7 @@ function AddCustomerOnAction(){
     let CustomerAge=document.getElementById("cutomerAge").value
     let CustomerAddress=document.getElementById("cutomerAddress").value
 
-    const Customer=  {
+    const Customer = {
         custId : CustomerId,
         custName : CustomerName,
         custAge : CustomerAge,
@@ -47,17 +47,17 @@ function AddCustomerOnAction(){
    saveCustomerLocalDB(Customer);
 }
 
-function saveCustomerLocalDB(customer){
-    if(localStorage.getItem("CustomerList")){
+function saveCustomerLocalDB(customer) {
+    if(localStorage.getItem('customerList')){
         console.log(true);
-        let arOfCustomers=JSON.parse(localStorage.getItem("CustomerList"));
+        let arOfCustomers=JSON.parse(localStorage.getItem("customerList"));
         arOfCustomers.push(customer);
         localStorage.setItem("customerList",JSON.stringify(arOfCustomers));
     }else{
         console.log(false);
         const customerList=[];
         customerList.push(customer);
-        let arOfCustomers=JSON.stringify(customerList);
-        localStorage.setItem("customerList",JSON.stringify(arOfCustomers));
+        let arCustomers=JSON.stringify(customerList);
+        localStorage.setItem("customerList",arCustomers);
     }
 }
