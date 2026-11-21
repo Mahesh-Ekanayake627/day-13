@@ -77,7 +77,7 @@ import { CustomerList, getSum } from "./Example.js";
 console.log(CustomerList);
 
 let sum = getSum(10 , 20);
-console.log(sum);
+console.log(sum); 
 
 
 
