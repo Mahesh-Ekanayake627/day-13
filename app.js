@@ -32,32 +32,53 @@
 // let listCustomer = localStorage.getItem("customerList");
 // console.log(JSON.parse(listCustomer));
 
-function AddCustomerOnAction(){
-    let CustomerId=document.getElementById("cutomerId").value
-    let CustomerName=document.getElementById("cutomerName").value
-    let CustomerAge=document.getElementById("cutomerAge").value
-    let CustomerAddress=document.getElementById("cutomerAddress").value
+// function AddCustomerOnAction(){
+//     let CustomerId=document.getElementById("cutomerId").value
+//     let CustomerName=document.getElementById("cutomerName").value
+//     let CustomerAge=document.getElementById("cutomerAge").value
+//     let CustomerAddress=document.getElementById("cutomerAddress").value
 
-    const Customer = {
-        custId : CustomerId,
-        custName : CustomerName,
-        custAge : CustomerAge,
-        custAddress : CustomerAddress
-    }
-   saveCustomerLocalDB(Customer);
-}
+//     const Customer = {
+//         custId : CustomerId,
+//         custName : CustomerName,
+//         custAge : CustomerAge,
+//         custAddress : CustomerAddress
+//     }
+//    saveCustomerLocalDB(Customer);
+// }
 
-function saveCustomerLocalDB(customer) {
-    if(localStorage.getItem('customerList')){
-        console.log(true);
-        let arOfCustomers=JSON.parse(localStorage.getItem("customerList"));
-        arOfCustomers.push(customer);
-        localStorage.setItem("customerList",JSON.stringify(arOfCustomers));
-    }else{
-        console.log(false);
-        const customerList=[];
-        customerList.push(customer);
-        let arCustomers=JSON.stringify(customerList);
-        localStorage.setItem("customerList",arCustomers);
-    }
-}
+// function saveCustomerLocalDB(customer) {
+//     if(localStorage.getItem('customerList')){
+//         console.log(true);
+//         let arOfCustomers=JSON.parse(localStorage.getItem("customerList"));
+//         arOfCustomers.push(customer);
+//         localStorage.setItem("customerList",JSON.stringify(arOfCustomers));
+//     }else{
+//         console.log(false);
+//         const customerList=[];
+//         customerList.push(customer);
+//         let arCustomers=JSON.stringify(customerList);
+//         localStorage.setItem("customerList",arCustomers);
+//     }
+// }
+import Customer from "./Customer.js";
+import  Item  from "./item.js";
+
+
+let customer = new Customer("C001","Saman","Panadura",25);
+console.log(customer);
+
+let item = new Item();
+console.log(item);
+
+//import { customerList, getSum } from "./module/Example.js";
+import { CustomerList, getSum } from "./Example.js";
+
+console.log(CustomerList);
+
+let sum = getSum(10 , 20);
+console.log(sum);
+
+
+
+
